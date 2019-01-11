@@ -1,0 +1,30 @@
+{
+  "name": "webpack-images-resizer",
+  "version": "0.1.1",
+  "description": "Webpack images resizer plugin",
+  "url": "https://github.com/odrick/webpack-images-resizer",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odrick/webpack-images-resizer.git"
+  },
+  "keywords": [
+    "images",
+    "resize",
+    "resizer",
+    "webpack",
+    "webpackplugin"
+  ],
+  "author": "Alexander Norinchak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/odrick/webpack-images-resizer/issues"
+  },
+  "homepage": "https://github.com/odrick/webpack-images-resizer#readme",
+  "dependencies": {
+    "chokidar": "^2.0.4",
+    "jimp": "^0.6.0",
+    "tinify": "*"
+  }
+}
