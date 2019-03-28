@@ -4,7 +4,7 @@ const chokidar = require('chokidar');
 const tinify = require("tinify");
 const Jimp = require("jimp");
 
-const SUPPORTED_EXT = ['png', 'jpg', 'jpeg', 'gif', 'bpm'];
+const SUPPORTED_EXT = ['png', 'jpg', 'jpeg', 'gif', 'bmp'];
 
 function isFolder(path) {
     if(isExists(path)) {
@@ -27,7 +27,10 @@ function fixPath(path) {
 }
 
 function getNameFromPath(path) {
-    return path.trim().split('/').pop();
+    let filename = fixPath(path).split("/").pop();
+    let index = filename.lastIndexOf('.');
+
+    return filename.substring(0, index);
 }
 
 function getExtFromPath(path) {
