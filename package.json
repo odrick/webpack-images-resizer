@@ -1,6 +1,6 @@
 {
   "name": "webpack-images-resizer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Webpack images resizer plugin",
   "url": "https://github.com/odrick/webpack-images-resizer",
   "main": "index.js",

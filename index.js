@@ -175,6 +175,8 @@ class WebpackImagesResizer {
 
     apply(compiler) {
         compiler.hooks.emit.tapAsync('WebpackImagesResizer', (compilation, callback) => {
+            let devMode = (!compilation.options || compilation.options.mode === 'development');
+            
             let files = [];
 
             for(let item of this.list) {
@@ -190,11 +192,11 @@ class WebpackImagesResizer {
                         }
                     }
 
-                    this.addDependency(compilation.contextDependencies, srcPath);
+                    if(devMode) this.addDependency(compilation.contextDependencies, srcPath);
 
                     let subFolders = getSubFoldersList(srcPath);
                     for(let folder of subFolders) {
-                        this.addDependency(compilation.contextDependencies, folder);
+                        if(devMode) this.addDependency(compilation.contextDependencies, folder);
                     }
                 }
                 else {
@@ -202,7 +204,7 @@ class WebpackImagesResizer {
                         files.push({src: path, dest: item.dest});
                     }
 
-                    this.addDependency(compilation.fileDependencies, srcPath);
+                    if(devMode) this.addDependency(compilation.fileDependencies, srcPath);
                 }
             }
 
